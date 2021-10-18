@@ -1,0 +1,28 @@
+.card-design{
+    height: 500px;
+}
+
+.img-hover-zoom {
+    height: 300px;
+    overflow: hidden;
+  }
+
+  .img-hover-zoom img {
+    transition: transform .5s ease;
+  }
+  .img-hover-zoom:hover img {
+    transform: scale(1.1);
+  }
+
+  .service{
+      color: #00d6c0;
+      text-decoration: none;
+      font-weight: bold;
+  }
+  .service:hover{
+      color: brown;
+  }
+
+  .img-size{
+      height: 250px;
+  }

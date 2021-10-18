@@ -12,7 +12,9 @@ const NavBar = () => {
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ms-auto">
         <NavLink activeClassName="navbarDesign" className="navbar" to="/home">Home</NavLink>
-        <NavLink activeClassName="navbarDesign" className="navbar" to="/link">Pages</NavLink>
+        <NavLink activeClassName="navbarDesign" className="navbar" to="/link">About</NavLink>
+        <NavLink activeClassName="navbarDesign" className="navbar" to="/home">Doctors</NavLink>
+        <NavLink activeClassName="navbarDesign" className="navbar" to="/link">Departments</NavLink>
         {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
           <NavDropdown.Item href="#action/3.1">Research</NavDropdown.Item>
           <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -21,7 +23,7 @@ const NavBar = () => {
           <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
         </NavDropdown> */}
         <NavLink activeClassName="navbarDesign" className="navbar" to="/services">Services</NavLink>
-        <NavLink activeClassName="navbarDesign" className="navbar" to="/blog">Blog</NavLink>
+       
         <NavLink activeClassName="navbarDesign" className="navbar" to="/blog">
         <Button className="rounded-pill button-design">Make Appointment</Button>
             </NavLink>
