@@ -7,25 +7,24 @@ const NavBar = () => {
         <div>
   <Navbar expand="lg">
   <Container>
-    <Navbar.Brand href="#home">MediCare</Navbar.Brand>
+    <Navbar.Brand href="#home"><i class="fab fa-buffer"></i> MediCare</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ms-auto">
         <NavLink activeClassName="navbarDesign" className="navbar" to="/home">Home</NavLink>
-        <NavLink activeClassName="navbarDesign" className="navbar" to="/link">About</NavLink>
-        <NavLink activeClassName="navbarDesign" className="navbar" to="/home">Doctors</NavLink>
-        <NavLink activeClassName="navbarDesign" className="navbar" to="/link">Departments</NavLink>
-        {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">Research</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-        </NavDropdown> */}
+        <NavLink activeClassName="navbarDesign" className="navbar" to="/about1">About</NavLink>
+        <NavLink activeClassName="navbarDesign" className="navbar" to="/doctors">Doctors</NavLink>
+        <NavLink activeClassName="navbarDesign" className="navbar" to="/link">Departments</NavLink> 
         <NavLink activeClassName="navbarDesign" className="navbar" to="/services">Services</NavLink>
        
-        <NavLink activeClassName="navbarDesign" className="navbar" to="/blog">
+        {/* <NavLink activeClassName="navbarDesign" className="navbar" to="/blog">
         <Button className="rounded-pill button-design">Make Appointment</Button>
+            </NavLink> */}
+        <NavLink activeClassName="navbarDesign" className="navbar" to="/login">
+        <Button className="button-design">Login</Button>
+            </NavLink>
+        <NavLink activeClassName="navbarDesign" className="navbar" to="/register">
+        <Button className="button-design">Register</Button>
             </NavLink>
       </Nav>
     </Navbar.Collapse>

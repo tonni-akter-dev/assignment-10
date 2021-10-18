@@ -25,7 +25,7 @@ const Services = () => {
 
            </div> */}
             <Row xs={1} md={3} className="g-4 container m-auto">
-                {services.map((service) => (
+                {services.map((service) => ( 
                     <Col>
                         <Card className="card-design">
                            <div className="img-hover-zoom ">
