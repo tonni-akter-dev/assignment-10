@@ -1,6 +1,5 @@
-# MEDICARE
-This project was react js with [Live Link](https://medicare-83639.web.app/).
-
+# Site name: MEDICARE
+Site link:[Medicare](https://medicare-83639.web.app/).
 ## BUILD WITH
 . HTML5
 . CSS3
