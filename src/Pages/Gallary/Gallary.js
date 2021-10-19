@@ -5,7 +5,7 @@ const Gallary = () => {
         <div>
             {/* <!-- Gallery --> */}
             <div>
-             <h1>  Our Gallary</h1>
+             <h1 className="title text-center border mt-5">Our Gallary</h1>
             </div>
 <div class="row container m-auto">
   <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">

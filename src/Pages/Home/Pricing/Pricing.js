@@ -5,7 +5,7 @@ const Pricing = () => {
     <div className="mt-5 container mb-5">
       <div className="text-center">
         <h5 className="fw-bold">Select Your <span style={{ color: '#23cc88' }}>Package</span> </h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+        <p>We provide a relevant service for you </p>
       </div>
       <div>
         <div className="row bg-light">

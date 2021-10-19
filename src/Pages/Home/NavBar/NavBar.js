@@ -21,9 +21,9 @@ const NavBar = () => {
               <NavLink activeClassName="navbarDesign" className="navbar" to="/contact">Contact</NavLink>
             </Nav>
             <Nav>
-              {user.email &&
-                <button className="me-3 mt-2 bg-info p-2" style={{ height: '50px' }}>{user.displayName}</button>}
-              {user.email ?
+              {user.displayName &&
+                <button className="me-3 mt-2 bg-dark text-light p-2" style={{ height: '50px' }}>{user.displayName}</button>}                
+              {user.displayName ?
                 <NavLink activeClassName="navbarDesign" className="navbar" to="/login">
                   <button onClick={logOutUser} className="btn btn-dark">Logout</button>
                 </NavLink>

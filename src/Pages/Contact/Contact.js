@@ -4,15 +4,14 @@ import './Contact.css';
 const Contact = () => {
     return (
         <div>
-           <div className='contactInfo' style={{backgroundImage:"url()"}}>
-               <h1 className='display-1 fw-bold contactTitle ms-5'>Contact Us</h1>
+           <div className='contactInfo blog-bg'>
+     <h1 className='display-1 fw-bold contactTitle ms-5'>Contact Us</h1>
            </div>
            <Container>
-           <Row>
-               <Col xm-={12} lg={8}>
-                   <img className='contactIimg mt-5 rounded' src="/images/contact/2.jpg" alt="" />
-               </Col>
-               <Col xm={12} md={6} lg={4}>
+           <Row className="mb-5">              
+               <Col xm={12} md={6} lg={8}  className="m-auto">
+               <h2 className="mt-5">Leave us your info</h2>
+               <p>and we will get back to you.</p>
                    <Card className='mt-5 p-4 bg-dark'>
                        <h2 className='text-white text-center'>Ask Your Question</h2>
                        <hr className='text-white mb-5' />
@@ -27,11 +26,7 @@ const Contact = () => {
                        </div>
                        <button className='btn btn-danger w-50'>Send Message</button>
                        <hr className='text-white mb-3' />
-                       <div>
-                           <button className='me-3'><a href="https://facebook.com/" target='blank'><i className="fa-2x text-info fab fa-facebook-square"></i></a></button>
-
-                           <button className='me-3'><a href="https://twitter.com/" target='blank'><i className="fa-2x text-info fab fa-twitter"></i></a></button>
-                           <button><a href="https://www.instagram.com/" target='blank'><i className="fa-2x text-info fab fa-instagram-square"></i></a></button>
+                       <div>    
                        </div>
                    </Card>
                </Col>

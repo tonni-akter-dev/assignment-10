@@ -60,7 +60,6 @@ const useFirebase = () => {
     }).then(() => { })
       .catch(err => setError(err.message));
   }
-
   // login with email and password 
   const loginWithEmail = (email, password) => {
     return signInWithEmailAndPassword(auth,email, password )
