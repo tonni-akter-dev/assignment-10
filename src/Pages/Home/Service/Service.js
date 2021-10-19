@@ -1,19 +1,26 @@
 import React from 'react';
+import { Card, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Service = (props) => {
-    const{serviceName,discription,image}=props.service;
+    const { serviceName, discription, image, id } = props.service;
     return (
         <div>
-            {/* <h2></h2> */}
-            <div className="col col-md-6 col-sm-12">
-  <div className="card">
-    <img className="card-img-top" src={image} alt="Card image cap"/>
-    <div className="card-body">
-      <h5 className="card-title">{serviceName}</h5>
-      <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    </div>
-  </div>
-</div>
+            <Col className="mb-5">
+                <Card className="card-design">
+                    <div className="img-hover-zoom ">
+                        <Card.Img className="img-size" variant="top" src={image} />
+                    </div>
+                    <Card.Body>
+                        <Card.Title>{serviceName}</Card.Title>
+                        <Card.Text>
+                            {discription}
+                        </Card.Text>
+                        <Link
+                            to={`/serviceDetails/${id}`} className="service">More services</Link>
+                    </Card.Body>
+                </Card>
+            </Col>
         </div>
     );
 };

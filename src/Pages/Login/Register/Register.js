@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Col, Container, Form, InputGroup, Row } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
-import { useHistory } from "react-router";
+import { useHistory, useLocation } from "react-router";
 // import { emptyInputField } from "../../../utilities/utilities";
 const Register = () => {
   const [showState, setShowState] = useState(false);
@@ -11,7 +11,46 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const history = useHistory();
-  const { createNewUser,  error, setUser , updateUserName, logOutUser, setError } = useAuth();
+  const location = useLocation();
+  const redirect_uri = location?.state?.from || '/';
+  const { createNewUser,
+    error,
+    setUser,
+    updateUserName,
+    logOutUser,
+    setError,
+    setIsLoading,
+    googleSignIn,githubSignin
+   } = useAuth();
+
+
+  // handlegoogle signin
+  const handleGoogleSignin = () => {
+    setIsLoading(true)
+    googleSignIn()
+      .then((result) => {
+        setUser(result.user)
+        setError('')
+        history.push(redirect_uri);
+      }).catch((error) => {
+        setError(error.message)
+      }).finally(() => {
+        setIsLoading(false)
+      })
+  }
+  // handleGithub sign in
+  const handleGithubsignin = () => {
+    githubSignin()
+      .then((result) => {
+        setUser(result.user)
+        setError('')
+        history.push(redirect_uri);
+      }).catch((error) => {
+        setError(error.message)
+      }).finally(() => {
+        setIsLoading(false)
+      })
+  }
   // registration process function 
   const processRegistration = () => {
     setError("");
@@ -31,7 +70,7 @@ const Register = () => {
       });
   }
   // validate email address 
-  const handleEmil = (e) => {
+  const handleEmail = (e) => {
     const emailRegex = /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/;
     if (!emailRegex.test(e.target.value)) {
       setError("Invalid Email Address");
@@ -76,8 +115,8 @@ const Register = () => {
               <br />
               <p className="text-center">Or Sign Using </p>
               <div className="icon-parent">
-                <img className="img-icon" src='/images/google.png' alt="" />
-                <img className="img-icon" src='/images/github.png' alt="" />
+                <img onClick={handleGoogleSignin} className="img-icon" src='/images/google.png' alt="" />
+                <img onClick={handleGithubsignin} className="img-icon" src='/images/github.png' alt="" />
               </div>
               <Form onSubmit={handleRegistration}>
                 <Form.Group >
@@ -105,7 +144,7 @@ const Register = () => {
                       <i className="far fa-envelope-open text-primary"></i>
                     </InputGroup.Text>
                     <Form.Control
-                      onBlur={handleEmil}
+                      onBlur={handleEmail}
                       id="email"
                       className="input-field"
                       type="email"

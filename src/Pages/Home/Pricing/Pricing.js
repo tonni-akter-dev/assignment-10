@@ -2,7 +2,7 @@ import React from 'react';
 import './Pricing.css'
 const Pricing = () => {
   return (
-    <div className="mt-5 container">
+    <div className="mt-5 container mb-5">
       <div className="text-center">
         <h5 className="fw-bold">Select Your <span style={{ color: '#23cc88' }}>Package</span> </h5>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>

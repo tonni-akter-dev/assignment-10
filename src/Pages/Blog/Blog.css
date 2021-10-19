@@ -1,0 +1,15 @@
+.blog-bg{
+    background-image: url('https://a6e8z9v6.stackpathcdn.com/mediz/dentist/wp-content/uploads/sites/4/2019/12/page-title-3.jpg');
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    font-weight: bolder;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+}
+.blog-img{
+    max-width:100%;
+}

@@ -2,35 +2,81 @@ import React from "react";
 import "./Login.css";
 import { useState } from "react";
 import { Col, Container, Form, InputGroup, Row } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useHistory } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 // import { emptyInputField } from "../../../utilities/utilities";
 const Login = () => {
-  const [success, setSuccess] = useState("");
+  // const [success, setSuccess] = useState("");
   const [showState, setShowState] = useState(false);
   const [password, setPassword] = useState("");
-  const [email, setEmail]= useState("")
-  const { googleSignIn,  loginWithEmail , setError, setUser, error} = useAuth();
+  const [email, setEmail] = useState("");
+  const {
+    googleSignIn,
+    loginWithEmail,
+    setError,
+    setUser,
+    error,
+    setIsLoading,
+    githubSignin
+  } = useAuth();
+  
+  const location = useLocation();
+  const history = useHistory();
+  const redirect_uri = location?.state?.from || '/';
+
   // process login function 
   const processLogin = () => {
     loginWithEmail(email, password)
       .then(result => {
         setUser(result.user);
         setError("");
+        history.push(redirect_uri);
         // emptyInputField();
       }).catch(err => {
         if (err.message.includes("user-not-found")) {
           setError("Invalid Email and Password");
         }
-    })
+      })
   }
-// handle login submit 
+  // handlegoogle signin
+  const handleGoogleSignin = () => {
+    setIsLoading(true)
+    googleSignIn()
+      .then((result) => {
+        setUser(result.user)
+        setError('')
+        history.push(redirect_uri);
+      }).catch((error) => {
+        setError(error.message)
+      }).finally(() => {
+        setIsLoading(false)
+      })
+
+  }
+  // handleGithub sign in
+  const handleGithubsignin = () => {
+    githubSignin()
+      .then((result) => {
+        setUser(result.user)
+        setError('')
+        history.push(redirect_uri);
+      }).catch((error) => {
+        setError(error.message)
+      }).finally(() => {
+        setIsLoading(false)
+      })
+
+  }
+
+
+
+  // handle login submit 
   const handleSubmit = (e) => {
     e.preventDefault();
     processLogin();
   }
-// email validation function 
-  const handleEmil = (e) => {
+  // email validation function 
+  const handleEmail = (e) => {
     const emailRegex = /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/;
     if (!emailRegex.test(e.target.value)) {
       setError("Invalid Email Address");
@@ -50,29 +96,24 @@ const Login = () => {
               <p className="text-center">Or Sign Using </p>
               <div className="icon-parent">
                 <img
-                  onClick={googleSignIn}
+                  onClick={handleGoogleSignin}
                   className="img-icon"
                   src='/images/google.png'
                   alt=""
                 />
-                <img className="img-icon" src='/images/github.png' alt="" />
+                <img
+                  onClick={handleGithubsignin}
+                  className="img-icon" src='/images/github.png' alt="" />
               </div>
               <Form onSubmit={handleSubmit}>
                 <Form.Group>
-                  <p className="text-center text-success">
-                    <span className="text-white">he</span>
-                    {success}{" "}
-                    {success.length > 1 && (
-                      <i className="far fa-check-circle"></i>
-                    )}
-                  </p>
                   <Form.Label>Your Email</Form.Label>
                   <InputGroup hasValidation>
                     <InputGroup.Text id="inputGroupPrepen">
                       <i className="far fa-envelope-open text-primary"></i>
                     </InputGroup.Text>
                     <Form.Control
-                      onBlur={handleEmil}
+                      onBlur={handleEmail}
                       className="input-field"
                       id="login-email"
                       type="email"
@@ -112,10 +153,10 @@ const Login = () => {
                   </InputGroup>
                 </Form.Group>
 
-                <p className="text-end forgot-text">Forgot password?</p>
+                <p className="text-end ">Forgot password?</p>
 
                 <p className="text-danger d-block">
-                  <span className="text-white">h</span>
+                  <span className="text-white"></span>
                   {error}
                 </p>
                 <button className="login-btn">LOGIN</button>

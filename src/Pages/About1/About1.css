@@ -4,3 +4,11 @@ background-repeat: no-repeat;
 background-size: cover;
 height: 400px;
 }
+
+.roun{
+    border-radius:50px
+}
+.title1{
+color: black;
+font-weight: bold;
+}

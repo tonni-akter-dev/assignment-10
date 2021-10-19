@@ -1,24 +1,85 @@
 import React from 'react';
+import { Col, Row } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import About from '../Home/About/About';
 import './About1.css';
 const About1 = () => {
     return (
         <div className="mb-5">
-
             <div>
                 <div className="about-bg text-center pt-5">
                     <h2>About us</h2>
                     <NavLink to='/home'>Home</NavLink>
                 </div>
                 <About />
+                {/* our specialist */}
+                <div className="border p-5 mt-5">
+                    <div className="container ">
+                        <h3 className=" title">Meet Our Heart Specialists</h3>
+                        <p>Cardiology heart care by experienced and dedicated team who ensures that our patients receive compassionate, advanced care.</p>
+                    </div>
+                    <Row xs={1} md={3} className="container m-auto mt-5">
+                        <Col className="d-flex">
+                            <div>
+                                <img className="roun" src="http://jituchauhan.com/site-templates/medical-website-template/09_cardiology/images/dr-small-1.jpg" alt="" /></div>
+                            <div>
+                                <h6 className="title1">Dr. Jack Roach</h6>
+                                <small>(ELECTROPHYSIOLOGIST)</small>
+                            </div>
+                        </Col>
+                        <Col className="d-flex">
+                            <div >
+                                <img className="roun" src="http://jituchauhan.com/site-templates/medical-website-template/09_cardiology/images/dr-small-2.jpg" alt="" /></div>
+                            <div clasName="ps-2">
+                                <h6 className="title1"> Dr. Jessica Lumley</h6>
+                                <small>(PHYSICIAN)</small>
+                            </div>
+                        </Col>
+                        <Col className="d-flex">
+                            <div>
+                                <img className="roun" src="http://jituchauhan.com/site-templates/medical-website-template/09_cardiology/images/dr-small-3.jpg" alt="" /></div>
+                            <div>
+                                <h6 className="title1">Dr. Samantha Beale  </h6>
+                                <small>(HEART SPECIALIST)</small>
+
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row xs={1} md={3} className="m-auto mt-3 container">
+                        <Col className="d-flex">
+                            <div>
+                                <img className="roun" src="http://jituchauhan.com/site-templates/medical-website-template/09_cardiology/images/dr-small-4.jpg" alt="" /></div>
+                            <div>
+                                <h6 className="title1">Dr. Jack Roach</h6>
+                                <small>(ELECTROPHYSIOLOGIST)</small>
+                            </div>
+                        </Col>
+                        <Col className="d-flex">
+                            <div >
+                                <img className="roun" src="http://jituchauhan.com/site-templates/medical-website-template/09_cardiology/images/dr-small-5.jpg" alt="" /></div>
+                            <div clasName="ps-2">
+                                <h6 className="title1"> Dr. Jessica Lumley</h6>
+                                <small>(PHYSICIAN)</small>
+                            </div>
+                        </Col>
+                        <Col className="d-flex">
+                            <div>
+                                <img className="roun" src="http://jituchauhan.com/site-templates/medical-website-template/09_cardiology/images/dr-small-6.jpg" alt="" /></div>
+                            <div>
+                                <h6 className="title1">Dr. Samantha Beale  </h6>
+                                <small>(HEART SPECIALIST)</small>
+                            </div>
+                        </Col>
+                    </Row>
+                </div>
+                {/* achieve goals */}
                 <div className="text-center p-5">
-                    <h4>Goals to Achieve for the leadership</h4>
+                    <h3 className="title1">Goals to Achieve for the leadership</h3>
                     <p>Who are in extremely love with eco friendly system.</p>
                 </div>
                 <div>
-                    <div className="row">
-                        <div className="col-lg-6">
+                    <div className="row container m-auto">
+                        <div className="col-lg-6 col-sm-12 mb-5">
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingOne">
@@ -58,12 +119,43 @@ const About1 = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-6">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/ARA0AxrnHdM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div className="col-lg-6 col-sm-12">
+                            <img src="/images/app1.webp" className="img-fluid" alt="" />
                         </div>
                     </div>
                 </div>
             </div>
+            {/* services...... */}
+            <div className="details mt-5 text-light">
+                <div className=" row container p-5 m-auto">
+                    <div className="col-lg-3  text-center mb-3" >
+                        <img className="image-sizing" src="https://f.hubspotusercontent20.net/hubfs/20206872/icon4.svg" alt="" />
+                        <h2>609</h2>
+                        <small>Pregnancy Care</small>
+                        <small>Sediut perspici atesi unde omni istenats.</small>
+                    </div>
+                    <div className="col-lg-3  text-center mb-3">
+                        <img className="image-sizing" src="https://f.hubspotusercontent20.net/hubfs/20206872/icon5.svg" alt="" />
+                        <h2>209</h2>
+                        <small>Online Help</small>
+                        <small>Sediut perspici atesi unde omni istenats.</small>
+                    </div>
+                    <div className="col-lg-3  text-center mb-3">
+                        <img className="image-sizing" src="https://f.hubspotusercontent20.net/hubfs/20206872/icon6.svg" alt="" />
+                        <h2>309</h2>
+                        <small>Consultation
+                        </small>
+                        <small>Sediut perspici atesi unde omni istenats.</small>
+                    </div>
+                    <div className="col-lg-3 text-center mb-3">
+                        <img className="image-sizing" src="https://f.hubspotusercontent20.net/hubfs/20206872/icon7.svg" alt="" />
+                        <h2>300</h2>
+                        <small>Diagnosis</small>
+                        <small>Sediut perspici atesi unde omni istenats.</small>
+                    </div>
+                </div>
+            </div>
+
         </div>
     );
 };

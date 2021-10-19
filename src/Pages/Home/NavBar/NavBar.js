@@ -12,16 +12,22 @@ const NavBar = () => {
           <Navbar.Brand href="#home"><i class="fab fa-buffer"></i> MediCare</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
+            <Nav className="mx-auto">
               <NavLink activeClassName="navbarDesign" className="navbar" to="/home">Home</NavLink>
               <NavLink activeClassName="navbarDesign" className="navbar" to="/about1">About</NavLink>
               <NavLink activeClassName="navbarDesign" className="navbar" to="/doctors">Doctors</NavLink>
-              <NavLink activeClassName="navbarDesign" className="navbar" to="/link">Departments</NavLink>
-              <NavLink activeClassName="navbarDesign" className="navbar" to="/services">Services</NavLink>
+              <NavLink activeClassName="navbarDesign" className="navbar" to="/blogs">Blog</NavLink>
+              <NavLink activeClassName="navbarDesign" className="navbar" to="/service">Services</NavLink>
+              <NavLink activeClassName="navbarDesign" className="navbar" to="/contact">Contact</NavLink>
+            </Nav>
+            <Nav>
               {user.email &&
-                <p className="me-3 pt-3 bg-info p-2">{user.displayName}</p>}
+                <button className="me-3 mt-2 bg-info p-2" style={{ height: '50px' }}>{user.displayName}</button>}
               {user.email ?
-                <button onClick={logOutUser} className="btn btn-dark">Logout</button>
+                <NavLink activeClassName="navbarDesign" className="navbar" to="/login">
+                  <button onClick={logOutUser} className="btn btn-dark">Logout</button>
+                </NavLink>
+
                 : <NavLink activeClassName="navbarDesign" className="navbar" to="/login">
                   <Button className="button-design">Login</Button>
                 </NavLink>
