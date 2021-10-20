@@ -163,7 +163,7 @@ const Login = () => {
 
                 <p className="text-center">
                   Are You New ?{" "}
-                  <NavLink to="/register">Rlease Register</NavLink>
+                  <NavLink to="/register">Please Register</NavLink>
                 </p>
               </Form>
             </div>
